@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perisight</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/appointment.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="doctor-boxes">
+            <div class="doctor-box a1" >
+                <div>
+                    <h3>Dr. Manasi Kadam</h3>
+                    <p>Specialty: Cardiology</p>
+                    <p>Availability: Mon, Wed, Fri</p>
+                </div>
+                <div>
+                    <img src="/static/image/doc1.jpg" alt="" style="border-radius: 100px;">
+                </div>
+            </div>
+            <div class="doctor-box a1" >
+                <div >
+                    <h3>Dr. Anushka Sharma</h3>
+                    <p>Specialty: Pediatrics</p>
+                    <p>Availability: Tue, Thu, Sat</p>
+                </div>
+                <div>
+                     <img class="doc" src="/static/image/doc3.jpg" alt="doc" style="border-radius: 100px;">
+                </div>
+                
+            </div>
+            <div class="doctor-box a1">
+                <div>
+                    <h3>Dr. Shanaya Kapoor</h3>
+                    <p>Specialty: Orthopedics</p>
+                    <p>Availability: Mon, Wed, Fri</p>
+                </div>
+                <div>
+                    <img src="/static/image/doc4.jpg" alt="" style="border-radius: 100px;">
+                </div>
+                
+            </div>
+            <div class="doctor-box a1">
+                <div>
+                    <h3>Dr. Virat Kohli</h3>
+                    <p>Specialty: Dermatology</p>
+                    <p>Availability: Tue, Thu, Sat</p>
+                </div>
+                <div>
+                    <img src="/static/image/doc7.jpg" alt="" style="border-radius: 100px;">
+                </div>
+            </div>
+        </div>
+
+        <div class="appointment-form">
+            <h2>Appointment Details</h2>
+            <form id="appointment-form"  action="https://api.web3forms.com/submit" method="post">
+                <div class="input-box">
+                    <input type="hidden" name="access_key" value="c0931952-6cd7-4302-8e5a-b37cb0cdab11">
+                    <input type="text" placeholder="Full Name" name="fullname" id="fullname" required>
+                </div>
+                <div class="input-box">
+                    <input type="email" name="email" placeholder="Email Id" id="email" required>
+                </div>
+                <div class="input-box">
+                    <input type="tel"  placeholder="Phone" name="phone" id="phone" required>
+                </div>
+                <div class="input-box">
+                    <input type="date" placeholder="Date" name="date" id="date" required>
+                </div>
+                <div class="input-box">
+                    <input type="time" name="time" placeholder="time" id="time" required>
+                </div>
+                <button type="submit" class="btn">Book Appointment</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

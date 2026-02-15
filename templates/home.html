@@ -1,0 +1,77 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    
+    <link rel="icon" href="">
+
+    <link rel="fonts" href="https://fonts.googleapis.com/css2?family=Lato%3Awght%40400%3B700%3B800%3B900&display=swap">
+
+    <title>Perisight</title>
+
+
+</head>
+<body>
+   <div class="image">
+    <header class="header">
+        <p class="logo">Perisight</p>
+        <nav>
+        <ul class="links">
+            <li class="link-item">
+                <a class="link" href="/">Home</a>
+            </li>
+            {% if session.logged_in %}
+            <li class="link-item">
+                <a class="link" href="/index">Prediction_Area</a>
+            </li>
+            <li class="link-item">
+                <a class="link" href="/about">About</a>
+            </li>
+            <li class="link-item">
+                <a class="link" href="/contact">Contact Us</a>
+            </li>
+            <li class="link-item">
+                <a class="link" href="/consult">Consuting</a>
+            </li>
+           
+            
+            {% endif %}
+        </ul>
+        </nav>
+        <div class="login-logout">
+            {% if session.logged_in %}
+            <form action="/logout" method="GET">
+                <button class="btn">Logout</button>
+            </form>
+            {% else %}
+            <form action="/login" method="GET">
+                <button class="btn">Login</button>
+            </form>
+            {% endif %}
+        </div>
+    </header>
+
+    <main class="main">
+        <h1 class="heading">Bright Beginnings: Early Warning System for Perinatal Depression</h1>
+        <p class="text"> Depression is a serious problem , consult  <span class="text--bold">right Now</span>!</p>
+    </main>
+
+    <footer class="footer">
+        <p class="copyright">&copy; 2024. copyright by Udayan</p>
+        <p class="stats">Perinatal detection Webapp</p>
+        
+    </footer>
+   
+   </div>
+</body>
+</html>
+

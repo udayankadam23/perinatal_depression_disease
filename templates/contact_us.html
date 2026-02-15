@@ -1,0 +1,94 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/contact_style.css') }}">
+  <link rel="fonts" href="https://fonts.googleapis.com/css2?family=Lato%3Awght%40400%3B700%3B800%3B900&display=swap">
+  <title>Perisight</title>
+  <script src="https://kit.fontawesome.com/c32adfdcda.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  
+  <section>
+    
+    <div class="section-header">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      </div>
+    </div>
+    
+    <div class="container">
+      <div class="row">
+        
+        <div class="contact-info">
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fas fa-home"></i>
+            </div>
+            
+            <div class="contact-info-content">
+              <h4>Address</h4>
+              <p>Pimpri,Pune<br/> Maharashtra, India, <br/>462001</p>
+            </div>
+          </div>
+          
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            
+            <div class="contact-info-content">
+              <h4>Phone</h4>
+              <p>9999999999</p>
+            </div>
+          </div>
+          
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            
+            <div class="contact-info-content">
+              <h4>Email</h4>
+             <p>udayankadam23@gmail.com</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="contact-form">
+          <form action="https://api.web3forms.com/submit" method="POST" id="contact-form">
+            <h2>Send Message</h2>
+            <div class="input-box">
+              <input type="hidden" name="access_key" value="c0931952-6cd7-4302-8e5a-b37cb0cdab11">
+
+              <input type="text" required="true" name="username" placeholder="fullname">
+              
+            </div>
+            
+            <div class="input-box">
+              <input type="email" required="true" name="email" placeholder="Email">
+              
+            </div>
+            
+            <div class="input-box">
+              <textarea required="true" name="message" placeholder="Type your Message..."></textarea>
+              
+            </div>
+            
+            <div class="input-box">
+              <input type="submit" value="Send" name="">
+            </div>
+          </form>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  
+</body>
+</html>

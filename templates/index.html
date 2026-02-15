@@ -1,0 +1,154 @@
+
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perisight</title>
+    <style>
+        @keyframes fade-in{
+            0%{
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            100%{
+                opacity: 1;
+                transform: translate(0px);
+            }
+        }        
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-width: 100%;
+            text-align: center;
+            background-image: url("/static/image/background1.jpg");
+            background-size: cover;
+            background-blend-mode: darken;
+            animation: fade-in 0.5s;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, .2);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+            color: #050303;
+            
+           
+}
+        
+
+        h1 {
+            color: #252426;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="number"] {
+            
+            width: 100%;
+            padding: 8px;
+            
+            
+            margin-bottom: 10px;
+            border: 1px solid rgba(36, 39, 49, 1);;
+            border-radius: 10px;
+            box-sizing: border-box;
+            
+        }
+
+        button {
+            
+            color: rgb(0, 0, 0);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            cursor: pointer;
+            background-color: #9daece;
+        }
+
+        #predict{
+            color: rgb(255, 255, 255);
+            background-color: rgb(17, 0, 128);
+        }
+
+    </style>
+</head>
+<body>
+
+    
+
+
+    <div class="container">
+        <h1>Perinatal Disease Predictor</h1>
+        <form action="/predict" method="post" onsubmit="getResult()">
+            <label for="Age">Age:</label>
+            <input type="number" class="age" name="Age" required>
+            <label for="Sleepinghours">Hours of Sleep:</label>
+            <input type="number" id="Sleepinghours" name="Sleepinghours" required>
+            <label for="Workhours">Hours of Work:</label>
+            <input type="number" id="Workhours" name="Workhours" required>
+            <label for="Weeks_of_Pregnancy">Weeks of Pregnancy:</label>
+            <input type="number" id="Weeks_of_Pregnancy" name="Weeks_of_Pregnancy" required>
+            <label for="Healthproblems">Health Problems (0 for NO or 1 for YES):</label>
+            <input type="number" id="Healthproblems" name="Healthproblems" required>
+            <label for="Desiredpregnancy">Desired Pregnancy (0 for NO or 1 for YES):</label>
+            <input type="number" id="Desiredpregnancy" name="Desiredpregnancy" required>
+            <label for="Maritalstatus">Marital Status (0 for NO or 1 for YES):</label>
+            <input type="number" id="Maritalstatus" name="Maritalstatus" required>
+            <label for="Family_history_of_mentalillness">Family History of Mental Illness (0 for NO or 1 for YES):</label>
+            <input type="number" id="Family_history_of_mentalillness" name="Family_history_of_mentalillness" required>
+            <label for="Weight">Weight:</label>
+            <input type="number" id="Weight" name="Weight" required>
+            <button type="submit" id="predict">Predict</button>
+        </form>
+    </div>
+
+    <script>
+        // Function to set the prediction result in the hidden input field
+        function getResult() {
+            // Retrieve input values from the form fields
+            var age = document.getElementById('Age').value;
+            var sleepingHours = document.getElementById('Sleepinghours').value;
+            var workHours = document.getElementById('Workhours').value;
+            var weeksOfPregnancy = document.getElementById('Weeks_of_Pregnancy').value;
+            var healthProblems = document.getElementById('Healthproblems').value;
+            var desiredPregnancy = document.getElementById('Desiredpregnancy').value;
+            var maritalStatus = document.getElementById('Maritalstatus').value;
+            var familyHistoryOfMentalIllness = document.getElementById('Family_history_of_mentalillness').value;
+            var weight = document.getElementById('Weight').value;
+
+            // Construct the input features string
+            var inputFeatures = `Age: ${age}\nSleeping Hours: ${sleepingHours}\nWork Hours: ${workHours}\nWeeks of Pregnancy: ${weeksOfPregnancy}\nHealth Problems: ${healthProblems}\nDesired Pregnancy: ${desiredPregnancy}\nMarital Status: ${maritalStatus}\nFamily History of Mental Illness: ${familyHistoryOfMentalIllness}\nWeight: ${weight}`;
+
+            // Update the value of the hidden input field 'result' with the input features
+            document.getElementById('result').value = inputFeatures;
+
+            // Prevent form submission
+            return false;
+        }
+    </script>
+    
+</body>
+</html>
