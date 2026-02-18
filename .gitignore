@@ -1,4 +1,5 @@
 # Virtual environments
+# Virtual environments
 venv/
 .venv/
 myenv/
@@ -7,17 +8,17 @@ myenv/
 __pycache__/
 *.pyc
 
-# Database
+# Databases and runtime artifacts
 *.db
+*.sqlite3
+instance/*.db
 
 # Environment variables
 .env
 
-# VS Code
+# Editor/OS files
 .vscode/
-
-# Mac
 .DS_Store
 
-
+# Generated reports
 *.pdf

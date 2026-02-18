@@ -102,7 +102,7 @@
 
     <div class="container">
         <h1>Perinatal Disease Predictor</h1>
-        <form action="/predict" method="post" onsubmit="getResult()">
+        <form action="{{ url_for('predict_handler') }}" method="post" onsubmit="getResult()">
             <label for="Age">Age:</label>
             <input type="number" class="age" name="Age" required>
             <label for="Sleepinghours">Hours of Sleep:</label>

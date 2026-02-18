@@ -10,7 +10,8 @@
 <body>
     
     <div class="wrapper">
-        <form action="http://127.0.0.1:5000/login" method="POST">
+        <form method="POST" action="{{ url_for('login') }}">
+
             <h1>Login</h1>
             <div class="input-box">
                 <input type="text" name="username" placeholder="Username" required>
@@ -25,13 +26,13 @@
             </div>
             <div class="remember-forgot">
                 <label><input type="checkbox">Remember me</label>
-                <a href="http://127.0.0.1:5000/register/">Forgot Password?</a>
+                <a href="{{ url_for('register') }}">Forgot Password?</a>
             </div>
 
             <button type="submit" class="btn">Login</button>
 
             <div class="register-link">
-                <p style="cursor: pointer;">Dont have an account? <a href="http://127.0.0.1:5000/register/">Register</a></p>
+                <p style="cursor: pointer;">Dont have an account? <a href="{{ url_for('register') }}">Register</a></p>
             </div>
             
 

@@ -154,7 +154,7 @@ body {
 <body>
     <div class="wrapper">
         <h2>Register</h2>
-        <form action="/register" method="POST">
+        <form action="{{ url_for('register') }}" method="POST">
             <div class="input-box">
                 <label for="username">Username:</label>
                 <input type="text" name="username" id="username" placeholder="Enter your username" required>
@@ -167,7 +167,7 @@ body {
                 <input type="submit" class="btn"  value="Register">
             </div>
             <div class="register-link">
-                <p>Already have an account? <a href="/login">Login here</a></p>
+                <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a></p>
             </div>
         </form>
     </div>

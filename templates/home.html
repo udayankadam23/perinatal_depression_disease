@@ -27,20 +27,20 @@
         <nav>
         <ul class="links">
             <li class="link-item">
-                <a class="link" href="/">Home</a>
+                <a class="link" href="{{ url_for('home') }}">Home</a>
             </li>
             {% if session.logged_in %}
             <li class="link-item">
-                <a class="link" href="/index">Prediction_Area</a>
+                <a class="link" href="{{ url_for('index') }}">Prediction_Area</a>
             </li>
             <li class="link-item">
-                <a class="link" href="/about">About</a>
+                <a class="link" href="{{ url_for('about') }}">About</a>
             </li>
             <li class="link-item">
-                <a class="link" href="/contact">Contact Us</a>
+                <a class="link" href="{{ url_for('contact') }}">Contact Us</a>
             </li>
             <li class="link-item">
-                <a class="link" href="/consult">Consuting</a>
+                <a class="link" href="{{ url_for('feedback') }}">Consuting</a>
             </li>
            
             
@@ -49,11 +49,11 @@
         </nav>
         <div class="login-logout">
             {% if session.logged_in %}
-            <form action="/logout" method="GET">
+            <form action="{{ url_for('logout') }}" method="GET">
                 <button class="btn">Logout</button>
             </form>
             {% else %}
-            <form action="/login" method="GET">
+            <form action="{{ url_for('login') }}" method="GET">
                 <button class="btn">Login</button>
             </form>
             {% endif %}
