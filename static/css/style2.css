@@ -25,6 +25,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    padding: 20px 12px;
     
    
     background-image: url("/static/image/background.jpg");
@@ -33,7 +34,7 @@ body {
     background-position: center;
     animation: fade-in 0.5s;
     overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-y: auto;
 }
 
 .wrapper {
@@ -137,4 +138,32 @@ body {
 .register-link p a:hover {
     text-decoration: underline;
     
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 20px 12px;
+        overflow-y: auto;
+    }
+
+    .wrapper {
+        width: min(420px, 100%);
+    }
+}
+
+@media (max-width: 480px) {
+    .wrapper {
+        padding: 22px 18px;
+    }
+
+    .wrapper h1 {
+        font-size: 30px;
+    }
+
+    .wrapper .remember-forgot {
+        flex-direction: column;
+        gap: 8px;
+        align-items: flex-start;
+        margin: -8px 0 15px;
+    }
 }

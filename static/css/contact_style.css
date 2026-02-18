@@ -177,9 +177,14 @@ section {
 }
 
 @media (max-width: 991px) {
+  body {
+    overflow-x: hidden;
+  }
+
   section {
     padding-top: 50px;
     padding-bottom: 50px;
+    width: 100%;
   }
   
   .row {
@@ -193,5 +198,63 @@ section {
   
   .contact-form {
     width: 100%;
+  }
+
+  .section-header h2 {
+    font-size: 2.3em;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    padding: 16px 10px;
+  }
+
+  .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .section-header {
+    margin-bottom: 26px;
+  }
+
+  .section-header h2 {
+    font-size: 1.9em;
+    margin-bottom: 12px;
+  }
+
+  .section-header p {
+    font-size: 14px;
+  }
+
+  .contact-info-item {
+    margin-bottom: 20px;
+  }
+
+  .contact-info-icon {
+    height: 56px;
+    width: 56px;
+  }
+
+  .contact-info-icon i {
+    font-size: 24px;
+    line-height: 56px;
+  }
+
+  .contact-info-content {
+    margin-left: 12px;
+  }
+
+  .contact-info-content h4 {
+    font-size: 1.1em;
+  }
+
+  .contact-form {
+    padding: 20px 14px;
+  }
+
+  .contact-form h2 {
+    font-size: 1.6em;
   }
 }
